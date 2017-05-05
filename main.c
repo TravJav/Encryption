@@ -69,7 +69,8 @@ char *get_extension(){ // remember in C you cannot return arrays! in local func
     
     char buffer[25];
     
-    scanf("%s", &buffer); // protect against overflow
+     fgets(buffer, sizeof(buffer), stdin);
+    //scanf("%s", &buffer); // protect against overflow
     if(strlen(buffer)>23){
          fprintf(stderr, "File Extension Too Large! \n");
         return 1;
